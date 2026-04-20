@@ -61,14 +61,14 @@ export const staggerContainer: Variants = {
 };
 
 // Card hover animation
-export const cardHover = {
+export const cardHover: Variants = {
   rest: {
     y: 0,
-    transition: { duration: 0.3, ease: "easeOut" },
+    transition: { duration: 0.3, ease: "easeOut" as const },
   },
   hover: {
     y: -6,
-    transition: { duration: 0.3, ease: "easeOut" },
+    transition: { duration: 0.3, ease: "easeOut" as const },
   },
 };
 
