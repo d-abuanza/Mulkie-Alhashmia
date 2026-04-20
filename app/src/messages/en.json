@@ -1,0 +1,120 @@
+{
+  "Navigation": {
+    "services": "Services",
+    "methodology": "Methodology",
+    "consultation": "Consultation",
+    "getInTouch": "Get in Touch"
+  },
+  "Hero": {
+    "badge": "Spatial Identity Consultant · 2025",
+    "greeting": "Hi I'm Dr. Mulkie",
+    "role1": "Spatial Identity",
+    "role2": "Consultant",
+    "availability": "Available for new opportunities",
+    "description1": "A PhD in ",
+    "descriptionBold1": "Community Entrepreneurship and Spatial Identity",
+    "description1End": ", combining academic depth with field expertise to help entrepreneurs and organizations build their identity and achieve their true impact.",
+    "description2": "Working with clients from ",
+    "descriptionBold2": "Muscat, Riyadh, Dubai, and Berlin",
+    "description2End": " to transform their ideas into projects with a clear identity and future vision.",
+    "trustedBy": "Trusted by over",
+    "clients": "50+ clients",
+    "across": "across commercial and residential projects.",
+    "cta": "Get in Touch"
+  },
+  "Services": {
+    "title": "What does the consultation offer?",
+    "cards": {
+      "growth": {
+        "title": "Growth Strategy",
+        "description": "Specialized guidance to expand your business scope and build an influential presence in your field."
+      },
+      "roadmap": {
+        "title": "Project Roadmap",
+        "description": "Building a clear, phased plan to develop your project or transform your idea into reality."
+      },
+      "diagnosis": {
+        "title": "Brand Diagnosis",
+        "description": "Deep analysis of your current identity and discovering the gaps preventing you from standing out in the market."
+      }
+    }
+  },
+  "Process": {
+    "title": "How does the consultation session work?",
+    "steps": {
+      "register": {
+        "number": "01",
+        "title": "Fill out the registration form",
+        "description": "Answer short questions to help Dr. Mulkie understand your project beforehand"
+      },
+      "confirm": {
+        "number": "02",
+        "title": "Appointment confirmation",
+        "description": "You will receive session confirmation within 24 hours"
+      },
+      "session": {
+        "number": "03",
+        "title": "Focused consulting session",
+        "description": "A deep, personalized discussion about your situation and needs"
+      },
+      "actionable": {
+        "number": "04",
+        "title": "Clear actionable steps",
+        "description": "The session ends with actionable recommendations"
+      }
+    }
+  },
+  "CTA": {
+    "title": "Are you ready to take your project to the next level?",
+    "description": "Book your consultation with Dr. Mulkie now — answer a few short questions and we'll reach out to confirm your appointment.",
+    "ctaButton": "Click here to register and book your appointment",
+    "steps": {
+      "identity": "Identity",
+      "phase": "Phase",
+      "scope": "Scope"
+    },
+    "form": {
+      "projectName": "Project / Establishment Name *",
+      "responsibleName": "Responsible Person's Name *",
+      "jobTitle": "Job Title *",
+      "contactNumber": "Contact Number *",
+      "socialMedia": "Social Media Account or Project Website *",
+      "natureOfProject": "Nature of the project and services it provides? *",
+      "currentStage": "Current stage of your project *",
+      "biggestChallenge": "What is the biggest challenge (problem) you are facing now? *",
+      "expectation": "What do you expect to achieve from this consultation? *",
+      "source": "How did you hear about Dr. Mulkie? *",
+      "placeholder": "Your answer"
+    },
+    "options": {
+      "stages": {
+        "idea": "An idea that hasn't launched yet",
+        "foundation": "At the beginning of foundation",
+        "existing": "Existing project needing development",
+        "mature": "Mature project needing expansion"
+      },
+      "sources": {
+        "linkedin": "LinkedIn",
+        "recommendation": "Recommendation from an acquaintance",
+        "instagram": "Instagram",
+        "search": "Internet search",
+        "event": "Attended a lecture or event",
+        "other": "Other"
+      }
+    },
+    "buttons": {
+      "next": "Next Phase",
+      "prev": "Previous",
+      "submit": "Send"
+    }
+  },
+  "Footer": {
+    "links": {
+      "branding": "Strategic Branding",
+      "entrepreneurship": "Entrepreneurship",
+      "privacy": "Privacy",
+      "contact": "Contact"
+    },
+    "copyright": "© {year} Dr. Mulkie Al-Hashmi. All rights reserved."
+  }
+}
