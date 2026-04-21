@@ -8,7 +8,7 @@ export default function Footer() {
   const t = useTranslations("Footer");
 
   return (
-    <footer className="w-full py-16 px-6 lg:px-8 bg-surface-accent/40 border-t border-accent/10">
+    <footer className="w-full py-16 px-6 lg:px-8 bg-[#091422]/60 border-t border-white/5">
       <motion.div
         variants={fadeUp}
         initial="hidden"
@@ -18,7 +18,7 @@ export default function Footer() {
         className="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto"
       >
         {/* Brand */}
-        <div className="text-lg font-serif italic text-dark/70">
+        <div className="text-lg font-serif italic text-white/60">
           Dr. Mulkie Al-Hashmi
         </div>
 
@@ -29,7 +29,7 @@ export default function Footer() {
               <a
                 key={link}
                 href="#"
-                className="text-dark/40 hover:text-accent-dark transition-colors duration-200"
+                className="text-white/40 hover:text-white transition-colors duration-200"
               >
                 {link}
               </a>
@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="text-dark/30 font-label text-xs tracking-wide">
+        <div className="text-white/20 font-label text-xs tracking-wide">
           {t("copyright", { year: new Date().getFullYear() })}
         </div>
       </motion.div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 import { useTranslations } from "next-intl";
 
@@ -26,19 +27,22 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-24 px-6 lg:px-8 bg-white">
+    <section id="services" className="pt-40 pb-24 px-6 lg:px-8 bg-transparent">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
-        <motion.h2
+        <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           custom={0}
-          className="text-3xl md:text-4xl font-headline font-bold text-dark mb-12 text-center md:text-right rtl:md:text-right ltr:md:text-left"
+          className="flex items-center justify-center gap-4 mb-16"
         >
-          {t("title")}
-        </motion.h2>
+          <Image src="/2.svg" alt="" width={28} height={28} className="shrink-0" />
+          <h2 className="text-3xl md:text-4xl font-headline font-bold text-white">
+            {t("title")}
+          </h2>
+        </motion.div>
 
         {/* Service Cards Grid — 3 columns */}
         <motion.div
@@ -53,17 +57,17 @@ export default function Services() {
               key={service.title}
               variants={fadeUp}
               custom={index * 0.1}
-              className="bg-surface-accent/50 p-8 md:p-10 rounded-2xl border border-accent/10 hover:border-accent/40 transition-all duration-500 group hover:shadow-[0_8px_40px_rgba(0, 35, 73, 0.08)]"
+              className="bg-white/5 p-8 md:p-10 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-500 group hover:shadow-[0_8px_40px_rgba(0,0,0,0.3)]"
             >
               <div className="flex items-start gap-3 mb-5">
-                <span className="material-symbols-outlined text-2xl text-accent-dark shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300">
+                <span className="material-symbols-outlined text-2xl text-white/80 shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300">
                   {service.icon}
                 </span>
-                <h3 className="text-xl font-headline font-bold text-dark leading-snug">
+                <h3 className="text-xl font-headline font-bold text-white leading-snug">
                   {service.title}
                 </h3>
               </div>
-              <p className="text-medium text-sm leading-relaxed">
+              <p className="text-white/60 text-sm leading-relaxed">
                 {service.description}
               </p>
             </motion.div>

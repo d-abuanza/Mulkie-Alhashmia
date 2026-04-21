@@ -49,10 +49,12 @@ function PageContent({ pageId }: { pageId: PageId }) {
       return <Process />;
     case "consultation":
       return (
-        <>
-          <CTA />
+        <div className="min-h-screen flex flex-col">
+          <div className="flex-grow flex items-center justify-center">
+            <CTA />
+          </div>
           <Footer />
-        </>
+        </div>
       );
     case "form":
       return <ConsultationForm />;

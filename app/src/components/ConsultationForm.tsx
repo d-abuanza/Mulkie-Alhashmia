@@ -46,7 +46,7 @@ export default function ConsultationForm() {
   };
 
   const inputClass =
-    "w-full bg-white border border-dark/10 focus:border-accent text-dark p-4 rounded-xl focus:ring-0 focus:outline-none transition-colors placeholder:text-dark/30 font-body";
+    "w-full bg-white/5 border border-white/10 focus:border-white/30 text-white p-4 rounded-xl focus:ring-0 focus:outline-none transition-colors placeholder:text-white/20 font-body";
 
   const textareaClass = `${inputClass} resize-none`;
 
@@ -60,7 +60,7 @@ export default function ConsultationForm() {
   // ─── Success Screen ───
   if (submitted) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-white px-6">
+      <div className="min-h-screen flex items-center justify-center bg-transparent px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -68,10 +68,10 @@ export default function ConsultationForm() {
           className="text-center max-w-md"
         >
           <div className="text-5xl mb-6">✨</div>
-          <h2 className="text-2xl md:text-3xl font-headline font-bold text-dark mb-4">
+          <h2 className="text-2xl md:text-3xl font-headline font-bold text-white mb-4">
             {t("success.title")}
           </h2>
-          <p className="text-medium leading-relaxed text-lg">
+          <p className="text-white/70 leading-relaxed text-lg">
             {t("success.body")}
           </p>
         </motion.div>
@@ -80,14 +80,14 @@ export default function ConsultationForm() {
   }
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-[#0c1a2e] flex flex-col">
       {/* ─── Top Bar ─── */}
-      <div className="px-6 lg:px-8 py-6 border-b border-dark/5">
+      <div className="px-6 lg:px-8 py-6 border-b border-white/5">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-lg font-serif italic text-dark mb-1">
+          <h1 className="text-lg font-serif italic text-white mb-1">
             {t("pageTitle")}
           </h1>
-          <p className="text-sm text-dark/40 font-body">
+          <p className="text-sm text-white/40 font-body">
             {t("pageSubtitle")}
           </p>
         </div>
@@ -111,10 +111,10 @@ export default function ConsultationForm() {
 
           {/* Current step label */}
           <div className="flex justify-between items-baseline">
-            <p className="text-sm font-headline font-semibold text-dark">
+            <p className="text-sm font-headline font-semibold text-white">
               {stepTitles[step - 1]}
             </p>
-            <p className="text-xs text-dark/30 font-body">
+            <p className="text-xs text-white/30 font-body">
               {step} / {TOTAL_STEPS}
             </p>
           </div>
@@ -140,7 +140,7 @@ export default function ConsultationForm() {
                 >
                   {/* Q1: Full name + role */}
                   <div className="space-y-2">
-                    <label className="text-sm font-headline font-medium text-dark/70 block">
+                    <label className="text-sm font-headline font-medium text-white/70 block">
                       {t("q1.label")} <span className="text-red-400">*</span>
                     </label>
                     <input type="text" placeholder={t("q1.placeholder")} className={inputClass} required />
@@ -148,7 +148,7 @@ export default function ConsultationForm() {
 
                   {/* Q2: WhatsApp */}
                   <div className="space-y-2">
-                    <label className="text-sm font-headline font-medium text-dark/70 block">
+                    <label className="text-sm font-headline font-medium text-white/70 block">
                       {t("q2.label")} <span className="text-red-400">*</span>
                     </label>
                     <input type="tel" placeholder={t("q2.placeholder")} className={inputClass} dir="ltr" required />
@@ -156,7 +156,7 @@ export default function ConsultationForm() {
 
                   {/* Q3: Email */}
                   <div className="space-y-2">
-                    <label className="text-sm font-headline font-medium text-dark/70 block">
+                    <label className="text-sm font-headline font-medium text-white/70 block">
                       {t("q3.label")} <span className="text-red-400">*</span>
                     </label>
                     <input type="email" placeholder={t("q3.placeholder")} className={inputClass} dir="ltr" required />
@@ -164,7 +164,7 @@ export default function ConsultationForm() {
 
                   {/* Q4: Social media (optional) */}
                   <div className="space-y-2">
-                    <label className="text-sm font-headline font-medium text-dark/70 block">
+                    <label className="text-sm font-headline font-medium text-white/70 block">
                       {t("q4.label")}
                     </label>
                     <input type="text" placeholder={t("q4.placeholder")} className={inputClass} />
@@ -186,7 +186,7 @@ export default function ConsultationForm() {
                 >
                   {/* Q5: Project name + activity */}
                   <div className="space-y-2">
-                    <label className="text-sm font-headline font-medium text-dark/70 block">
+                    <label className="text-sm font-headline font-medium text-white/70 block">
                       {t("q5.label")} <span className="text-red-400">*</span>
                     </label>
                     <textarea rows={3} placeholder={t("q5.placeholder")} className={textareaClass} required />
@@ -194,7 +194,7 @@ export default function ConsultationForm() {
 
                   {/* Q6: Stage dropdown + launch date */}
                   <div className="space-y-2">
-                    <label className="text-sm font-headline font-medium text-dark/70 block">
+                    <label className="text-sm font-headline font-medium text-white/70 block">
                       {t("q6.label")} <span className="text-red-400">*</span>
                     </label>
                     <select className={inputClass} required defaultValue="">
@@ -209,7 +209,7 @@ export default function ConsultationForm() {
 
                   {/* Q7: Ideal customer */}
                   <div className="space-y-2">
-                    <label className="text-sm font-headline font-medium text-dark/70 block">
+                    <label className="text-sm font-headline font-medium text-white/70 block">
                       {t("q7.label")} <span className="text-red-400">*</span>
                     </label>
                     <textarea rows={3} placeholder={t("q7.placeholder")} className={textareaClass} required />
@@ -231,7 +231,7 @@ export default function ConsultationForm() {
                 >
                   {/* Q8: Marketing channels (multi-select) */}
                   <div className="space-y-3">
-                    <label className="text-sm font-headline font-medium text-dark/70 block">
+                    <label className="text-sm font-headline font-medium text-white/70 block">
                       {t("q8.label")} <span className="text-red-400">*</span>
                     </label>
                     <div className="grid grid-cols-2 gap-3">
@@ -243,8 +243,8 @@ export default function ConsultationForm() {
                             onClick={() => toggleChannel(ch)}
                             className={`px-4 py-3 rounded-xl border text-sm font-body text-left transition-all duration-200 ${
                               selectedChannels.includes(ch)
-                                ? "bg-accent/15 border-accent text-dark font-medium"
-                                : "bg-white border-dark/10 text-dark/60 hover:border-dark/25"
+                                ? "bg-white/15 border-white text-white font-medium"
+                                : "bg-white/5 border-white/10 text-white/60 hover:border-white/25"
                             }`}
                           >
                             {t(`q8.options.${ch}`)}
@@ -256,7 +256,7 @@ export default function ConsultationForm() {
 
                   {/* Q9: Differentiation (optional) */}
                   <div className="space-y-2">
-                    <label className="text-sm font-headline font-medium text-dark/70 block">
+                    <label className="text-sm font-headline font-medium text-white/70 block">
                       {t("q9.label")}
                     </label>
                     <textarea rows={3} placeholder={t("q9.placeholder")} className={textareaClass} />
@@ -278,7 +278,7 @@ export default function ConsultationForm() {
                 >
                   {/* Q10: Biggest challenge */}
                   <div className="space-y-2">
-                    <label className="text-sm font-headline font-medium text-dark/70 block">
+                    <label className="text-sm font-headline font-medium text-white/70 block">
                       {t("q10.label")} <span className="text-red-400">*</span>
                     </label>
                     <textarea rows={3} placeholder={t("q10.placeholder")} className={textareaClass} required />
@@ -286,7 +286,7 @@ export default function ConsultationForm() {
 
                   {/* Q11: Consultation goal */}
                   <div className="space-y-2">
-                    <label className="text-sm font-headline font-medium text-dark/70 block">
+                    <label className="text-sm font-headline font-medium text-white/70 block">
                       {t("q11.label")} <span className="text-red-400">*</span>
                     </label>
                     <textarea rows={3} placeholder={t("q11.placeholder")} className={textareaClass} required />
@@ -294,7 +294,7 @@ export default function ConsultationForm() {
 
                   {/* Q12: Additional info (optional) */}
                   <div className="space-y-2">
-                    <label className="text-sm font-headline font-medium text-dark/70 block">
+                    <label className="text-sm font-headline font-medium text-white/70 block">
                       {t("q12.label")}
                     </label>
                     <textarea rows={3} placeholder={t("q12.placeholder")} className={textareaClass} />
@@ -309,7 +309,7 @@ export default function ConsultationForm() {
                 <button
                   type="button"
                   onClick={goPrev}
-                  className="flex items-center gap-2 text-dark/40 hover:text-dark transition-colors font-headline cursor-pointer"
+                  className="flex items-center gap-2 text-white/40 hover:text-white transition-colors font-headline cursor-pointer"
                 >
                   <span className="material-symbols-outlined rtl:rotate-180">arrow_back</span>
                   {t("buttons.prev")}
@@ -321,7 +321,7 @@ export default function ConsultationForm() {
               <button
                 type="button"
                 onClick={step === TOTAL_STEPS ? handleSubmit : goNext}
-                className="group flex items-center gap-3 bg-dark text-white font-headline font-bold px-8 py-3.5 rounded-full hover:bg-accent hover:text-dark transition-all duration-300 cursor-pointer"
+                className="group flex items-center gap-3 bg-white text-dark font-headline font-bold px-8 py-3.5 rounded-full hover:bg-offwhite transition-all duration-300 cursor-pointer"
               >
                 {step === TOTAL_STEPS ? t("buttons.submit") : t("buttons.next")}
                 <span className="material-symbols-outlined text-xl rtl:rotate-180 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">

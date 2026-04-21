@@ -17,6 +17,23 @@ export const fadeUp: Variants = {
   }),
 };
 
+// Slower fade up animation specifically for the Hero section
+export const heroFadeUp: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+  },
+  visible: (delay: number = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.6,
+      ease: [0.16, 1, 0.3, 1],
+      delay,
+    },
+  }),
+};
+
 // Fade up with slight scale for images
 export const fadeUpScale: Variants = {
   hidden: {

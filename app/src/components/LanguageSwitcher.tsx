@@ -16,7 +16,7 @@ export default function LanguageSwitcher() {
   return (
     <button
       onClick={toggleLocale}
-      className="flex items-center justify-center w-10 h-10 rounded-full border border-dark/15 hover:bg-dark/5 transition-all duration-300 active:scale-95 shadow-sm text-sm font-headline font-bold text-dark uppercase tracking-wider"
+      className="flex items-center justify-center w-10 h-10 rounded-full border border-white/15 hover:bg-white/5 transition-all duration-300 active:scale-95 shadow-sm text-sm font-headline font-bold text-white uppercase tracking-wider"
       aria-label="Toggle language"
     >
       {locale === 'ar' ? 'EN' : 'AR'}

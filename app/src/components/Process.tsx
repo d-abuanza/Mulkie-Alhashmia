@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { fadeUp } from "@/lib/animations";
 import { useTranslations } from "next-intl";
 
@@ -41,22 +42,25 @@ export default function Process() {
   return (
     <section
       id="methodology"
-      className="bg-white py-32 px-6 lg:px-8 relative overflow-hidden"
+      className="bg-transparent py-32 px-6 lg:px-8 relative overflow-hidden"
     >
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl h-96 bg-accent/25 blur-[160px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl h-96 bg-white/5 blur-[160px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10 text-center">
-        <motion.h2
+        <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           custom={0}
-          className="text-4xl md:text-5xl font-headline font-bold text-dark mb-24"
+          className="flex items-center justify-center gap-4 mb-24"
         >
-          {t("title")}
-        </motion.h2>
+          <Image src="/2.svg" alt="" width={32} height={32} className="shrink-0" />
+          <h2 className="text-4xl md:text-5xl font-headline font-bold text-white">
+            {t("title")}
+          </h2>
+        </motion.div>
 
         <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 md:gap-6 items-start">
           {/* Cards */}
@@ -72,15 +76,15 @@ export default function Process() {
                 rotate: step.rotation,
                 translateY: step.yOffset,
               }}
-              className="relative bg-white p-8 md:p-10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-dark/5 flex flex-col items-start text-left rtl:text-right hover:shadow-[0_20px_50px_rgba(184,240,0,0.1)] transition-all duration-500 group"
+              className="relative bg-white/5 p-8 md:p-10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.2)] border border-white/10 flex flex-col items-start text-left rtl:text-right hover:shadow-[0_20px_50px_rgba(255,255,255,0.05)] transition-all duration-500 group"
             >
-              <span className="text-4xl font-headline font-medium text-dark/20 mb-8 block group-hover:text-dark/40 transition-colors">
+              <span className="text-4xl font-headline font-medium text-white/20 mb-8 block group-hover:text-white/40 transition-colors">
                 {step.number}
               </span>
-              <h3 className="text-xl font-headline font-bold text-dark mb-4">
+              <h3 className="text-xl font-headline font-bold text-white mb-4">
                 {step.title}
               </h3>
-              <p className="text-medium text-sm leading-relaxed">
+              <p className="text-white/60 text-sm leading-relaxed">
                 {step.description}
               </p>
             </motion.div>
