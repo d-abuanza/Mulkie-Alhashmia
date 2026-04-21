@@ -1,19 +1,10 @@
+import PageManager from "@/components/PageManager";
 import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Process from "@/components/Process";
-import CTA from "@/components/CTA";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main>
+    <PageManager>
       <Navigation />
-      <Hero />
-      <Services />
-      <Process />
-      <CTA />
-      <Footer />
-    </main>
+    </PageManager>
   );
 }

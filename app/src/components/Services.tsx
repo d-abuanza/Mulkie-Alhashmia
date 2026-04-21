@@ -53,7 +53,7 @@ export default function Services() {
               key={service.title}
               variants={fadeUp}
               custom={index * 0.1}
-              className="bg-surface-green/50 p-8 md:p-10 rounded-2xl border border-accent/10 hover:border-accent/40 transition-all duration-500 group hover:shadow-[0_8px_40px_rgba(184,240,0,0.08)]"
+              className="bg-surface-accent/50 p-8 md:p-10 rounded-2xl border border-accent/10 hover:border-accent/40 transition-all duration-500 group hover:shadow-[0_8px_40px_rgba(0, 35, 73, 0.08)]"
             >
               <div className="flex items-start gap-3 mb-5">
                 <span className="material-symbols-outlined text-2xl text-accent-dark shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300">

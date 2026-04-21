@@ -8,7 +8,7 @@ export default function Footer() {
   const t = useTranslations("Footer");
 
   return (
-    <footer className="w-full py-16 px-6 lg:px-8 bg-surface-green/40 border-t border-accent/10">
+    <footer className="w-full py-16 px-6 lg:px-8 bg-surface-accent/40 border-t border-accent/10">
       <motion.div
         variants={fadeUp}
         initial="hidden"
@@ -23,7 +23,7 @@ export default function Footer() {
         </div>
 
         {/* Links */}
-        <div className="flex gap-8 font-label text-xs tracking-wide leading-relaxed">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-8 font-label text-xs tracking-wide leading-relaxed text-center">
           {[t("links.branding"), t("links.entrepreneurship"), t("links.privacy"), t("links.contact")].map(
             (link) => (
               <a

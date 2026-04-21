@@ -1,9 +1,21 @@
 {
   "Navigation": {
+    "about": "About Dr. Mulkie",
     "services": "Services",
     "methodology": "Methodology",
     "consultation": "Consultation",
     "getInTouch": "Get in Touch"
+  },
+  "About": {
+    "title": "Who is Dr. Mulkie?",
+    "paragraph": "A PhD in Community Entrepreneurship and Spatial Identity, combining academic depth with field expertise to help entrepreneurs and organizations build their identity and achieve their true impact. Working with clients from Muscat, Riyadh, Dubai, and Berlin.",
+    "specializationTitle": "Specialization",
+    "specializations": {
+      "identity": "Building commercial and spatial identity",
+      "strategy": "Entrepreneurship strategy",
+      "innovation": "Innovation and business development",
+      "leadership": "Leadership and talent development"
+    }
   },
   "Hero": {
     "badge": "Spatial Identity Consultant · 2025",
@@ -116,5 +128,86 @@
       "contact": "Contact"
     },
     "copyright": "© {year} Dr. Mulkie Al-Hashmi. All rights reserved."
+  },
+  "Form": {
+    "pageTitle": "Consultation Booking Form",
+    "pageSubtitle": "Answer the following questions so we can prepare your session",
+    "sections": {
+      "info": "Your Information",
+      "project": "Your Project",
+      "current": "Current Situation",
+      "goals": "Challenges & Goals"
+    },
+    "q1": {
+      "label": "Your full name, job title / role in the project",
+      "placeholder": "e.g. Ahmed Mohammed — Founder & CEO"
+    },
+    "q2": {
+      "label": "WhatsApp number",
+      "placeholder": "+966 5x xxx xxxx"
+    },
+    "q3": {
+      "label": "Email address",
+      "placeholder": "example@email.com"
+    },
+    "q4": {
+      "label": "Your social media accounts (if any)",
+      "placeholder": "Link or account name"
+    },
+    "q5": {
+      "label": "Your project / organization name — what does it do and what are your main services or products?",
+      "placeholder": "Organization name, activity, and key services"
+    },
+    "q6": {
+      "label": "When did your project launch? What is its current stage?",
+      "selectPlaceholder": "Select stage",
+      "datePlaceholder": "Launch date (optional)",
+      "options": {
+        "idea": "An idea that hasn't launched yet",
+        "foundation": "At the beginning of foundation",
+        "existing": "Existing and needs development",
+        "mature": "Mature and needs expansion"
+      }
+    },
+    "q7": {
+      "label": "Who is your ideal customer? Do you target a specific audience?",
+      "placeholder": "Ideal customer and target audience"
+    },
+    "q8": {
+      "label": "What marketing channels do you currently use?",
+      "options": {
+        "instagram": "Instagram",
+        "whatsapp": "WhatsApp",
+        "paidAds": "Paid Ads",
+        "referrals": "Referrals",
+        "linkedin": "LinkedIn",
+        "other": "Other"
+      }
+    },
+    "q9": {
+      "label": "What sets your project apart? Why do customers choose you?",
+      "placeholder": "Differentiation factor and customer reason"
+    },
+    "q10": {
+      "label": "Biggest challenge you face now — have you tried previous solutions?",
+      "placeholder": "Biggest challenge and solutions you've tried"
+    },
+    "q11": {
+      "label": "What is your goal from this consultation? What do you hope to achieve in 3 months?",
+      "placeholder": "Consultation goal and desired outcomes"
+    },
+    "q12": {
+      "label": "Would you like to add any other information before the session?",
+      "placeholder": "Any notes or additional information"
+    },
+    "buttons": {
+      "next": "Next",
+      "prev": "Previous",
+      "submit": "Submit"
+    },
+    "success": {
+      "title": "Thank you! Your request has been received",
+      "body": "Dr. Mulkie or her team will contact you within 24 hours to confirm your session."
+    }
   }
 }

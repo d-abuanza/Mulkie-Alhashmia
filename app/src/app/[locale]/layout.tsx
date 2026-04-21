@@ -52,6 +52,7 @@ export default async function RootLayout({
       lang={locale}
       dir={dir}
       className={`${spaceGrotesk.variable} ${manrope.variable} ${playfair.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <head>
         <link
@@ -59,7 +60,7 @@ export default async function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-full flex flex-col font-body">
+      <body className="min-h-full flex flex-col font-body" suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>

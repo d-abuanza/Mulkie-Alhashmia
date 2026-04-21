@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* ── Green & White Palette ── */
-  --color-accent: #b8f000;
-  --color-accent-dark: #9ad400;
-  --color-accent-soft: #e8ffa8;
-  --color-accent-glow: #d4f564;
+  /* ── Indigo Midnight Palette ── */
+  --color-accent: #002349;
+  --color-accent-dark: #001a36;
+  --color-accent-soft: #e0e7ef;
+  --color-accent-glow: #003b7a;
 
   --color-dark: #1a1a1a;
   --color-dark-soft: #2d2d2d;
@@ -16,14 +16,14 @@
   --color-white: #ffffff;
   --color-offwhite: #fafafa;
   --color-surface: #f5f5f0;
-  --color-surface-green: #f0ffd6;
+  --color-surface-accent: #f0f4f8;
   --color-card: #f8f8f5;
 
   /* Legacy tokens (for CTA section that uses them) */
   --color-primary: #1a1a1a;
-  --color-primary-container: #1e3a1e;
-  --color-tertiary-fixed: #b8f000;
-  --color-on-primary-container: #88b088;
+  --color-primary-container: #2d2d2d;
+  --color-tertiary-fixed: #002349;
+  --color-on-primary-container: #4a6a8a;
 
   /* Fonts */
   --font-headline: var(--font-space-grotesk), "Space Grotesk", system-ui, sans-serif;
@@ -35,7 +35,6 @@
 
 /* Base */
 html {
-  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -58,9 +57,9 @@ body {
   -webkit-backdrop-filter: blur(20px);
 }
 
-/* Spatial Grid — dark green variant */
+/* Spatial Grid */
 .spatial-grid {
-  background-image: radial-gradient(circle at 2px 2px, rgba(0, 80, 0, 0.3) 1px, transparent 0);
+  background-image: radial-gradient(circle at 2px 2px, rgba(0, 35, 73, 0.15) 1px, transparent 0);
   background-size: 40px 40px;
 }
 
@@ -68,17 +67,17 @@ body {
 .hero-gradient {
   background: linear-gradient(180deg,
       #ffffff 0%,
-      #f0ffc8 20%,
-      #d8f870 40%,
-      #c8f030 55%,
-      #d8f870 70%,
-      #f0ffc8 85%,
+      #f5f8fb 20%,
+      #e0e7ef 40%,
+      #c2d1e0 55%,
+      #e0e7ef 70%,
+      #f5f8fb 85%,
       #ffffff 100%);
 }
 
 /* Organic Connecting Line */
 .organic-line {
-  background: linear-gradient(to bottom, #b8f000 0%, rgba(184, 240, 0, 0.1) 100%);
+  background: linear-gradient(to bottom, #002349 0%, rgba(0, 35, 73, 0.1) 100%);
   width: 1px;
 }
 
@@ -92,13 +91,13 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #b8f000;
+  background: #002349;
   border-radius: 3px;
 }
 
 /* Selection */
 ::selection {
-  background: rgba(184, 240, 0, 0.3);
+  background: rgba(0, 35, 73, 0.2);
   color: #1a1a1a;
 }
 
@@ -111,11 +110,11 @@ a {
 
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(184, 240, 0, 0.3);
+    box-shadow: 0 0 0 0 rgba(0, 35, 73, 0.3);
   }
 
   50% {
-    box-shadow: 0 0 20px 5px rgba(184, 240, 0, 0.1);
+    box-shadow: 0 0 20px 5px rgba(0, 35, 73, 0.1);
   }
 }
 
