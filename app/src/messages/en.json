@@ -132,12 +132,14 @@
   "Form": {
     "pageTitle": "Consultation Booking Form",
     "pageSubtitle": "Answer the following questions so we can prepare your session",
+    "backToHome": "Back to Home",
     "sections": {
       "info": "Your Information",
       "project": "Your Project",
       "current": "Current Situation",
       "goals": "Challenges & Goals"
     },
+    "requiredNote": "Fields marked with (*) are required",
     "q1": {
       "label": "Your full name, job title / role in the project",
       "placeholder": "e.g. Ahmed Mohammed — Founder & CEO"
@@ -208,6 +210,11 @@
     "success": {
       "title": "Thank you! Your request has been received",
       "body": "Dr. Mulkie or her team will contact you within 24 hours to confirm your session."
+    },
+    "validation": {
+      "invalidEmail": "Please enter a valid email address",
+      "invalidPhone": "Please enter a valid phone number (digits only)",
+      "required": "This field is required"
     }
   }
 }
