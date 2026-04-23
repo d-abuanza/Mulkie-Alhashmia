@@ -56,7 +56,7 @@ export default function Process() {
           custom={0}
           className="flex items-center justify-center gap-4 mb-24"
         >
-          <Image src="/2.svg" alt="" width={32} height={32} className="shrink-0" />
+          <Image src="/2.svg" alt="" width={56} height={56} className="shrink-0" />
           <h2 className="text-4xl md:text-5xl font-headline font-bold text-white">
             {t("title")}
           </h2>

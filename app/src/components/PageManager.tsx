@@ -44,9 +44,23 @@ function PageContent({ pageId }: { pageId: PageId }) {
     case "about":
       return <About />;
     case "services":
-      return <Services />;
+      return (
+        <div className="min-h-screen flex flex-col">
+          <div className="flex-grow">
+            <Services />
+          </div>
+          <Footer />
+        </div>
+      );
     case "methodology":
-      return <Process />;
+      return (
+        <div className="min-h-screen flex flex-col">
+          <div className="flex-grow">
+            <Process />
+          </div>
+          <Footer />
+        </div>
+      );
     case "consultation":
       return (
         <div className="min-h-screen flex flex-col">

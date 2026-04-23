@@ -16,9 +16,9 @@ export default function About() {
   const t = useTranslations("About");
 
   return (
-    <section className="min-h-screen flex items-center py-28 px-6 lg:px-8 bg-transparent">
+    <section className="min-h-[auto] md:min-h-screen flex items-center pt-32 pb-16 md:py-28 px-4 md:px-6 lg:px-8 bg-transparent">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
 
           {/* Left Column — Title & Paragraph */}
           <motion.div
@@ -29,10 +29,10 @@ export default function About() {
             <motion.div
               variants={fadeUp}
               custom={0}
-              className="flex items-center gap-4 mb-8"
+              className="flex items-center gap-3 md:gap-4 mb-5 md:mb-8"
             >
-              <Image src="/2.svg" alt="" width={32} height={32} className="shrink-0" />
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-white leading-tight">
+              <Image src="/2.svg" alt="" width={32} height={32} className="shrink-0 w-6 h-6 md:w-8 md:h-8" />
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-headline font-bold text-white leading-tight">
                 {t("title")}
               </h2>
             </motion.div>
@@ -40,7 +40,7 @@ export default function About() {
             <motion.p
               variants={fadeUp}
               custom={0.15}
-              className="text-white/70 text-base md:text-lg leading-relaxed"
+              className="text-white/70 text-sm md:text-lg leading-relaxed"
             >
               {t("paragraph")}
             </motion.p>
@@ -55,27 +55,27 @@ export default function About() {
             <motion.h3
               variants={fadeUp}
               custom={0.2}
-              className="text-xl md:text-2xl font-headline font-bold text-white mb-8"
+              className="text-lg md:text-2xl font-headline font-bold text-white mb-5 md:mb-8"
             >
               {t("specializationTitle")}
             </motion.h3>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 md:gap-5">
               {specializations.map((spec, index) => (
                 <motion.div
                   key={spec.key}
                   variants={fadeIn}
                   custom={0.3 + index * 0.1}
-                  className="flex items-center gap-4 group"
+                  className="flex items-center gap-4 md:gap-5 group"
                 >
                   <Image 
                     src="/2.svg" 
                     alt="icon" 
-                    width={18} 
-                    height={18} 
-                    className="shrink-0 group-hover:scale-125 transition-transform duration-300" 
+                    width={22} 
+                    height={22} 
+                    className="shrink-0 w-4 h-4 md:w-[22px] md:h-[22px] group-hover:scale-125 transition-transform duration-300" 
                   />
-                  <span className="text-white/90 text-base md:text-lg font-body leading-relaxed">
+                  <span className="text-white/90 text-base md:text-xl font-body leading-relaxed">
                     {t(`specializations.${spec.key}`)}
                   </span>
                 </motion.div>

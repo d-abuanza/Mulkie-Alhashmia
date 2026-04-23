@@ -38,7 +38,7 @@ export default function Services() {
           custom={0}
           className="flex items-center justify-center gap-4 mb-16"
         >
-          <Image src="/2.svg" alt="" width={28} height={28} className="shrink-0" />
+          <Image src="/2.svg" alt="" width={56} height={56} className="shrink-0" />
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-white">
             {t("title")}
           </h2>

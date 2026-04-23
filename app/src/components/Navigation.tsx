@@ -12,6 +12,7 @@ export default function Navigation() {
   const t = useTranslations("Navigation");
 
   const navLinks: { label: string; page: PageId }[] = [
+    { label: t("about"), page: "about" },
     { label: t("services"), page: "services" },
     { label: t("methodology"), page: "methodology" },
     { label: t("consultation"), page: "consultation" },
@@ -70,21 +71,23 @@ export default function Navigation() {
                     <button
                       key={link.page}
                       onClick={() => handleNav(link.page)}
-                      className={`px-4 py-3 text-sm font-body font-medium rounded-xl transition-all duration-200 text-left w-full ${activePage === link.page
-                          ? "text-white bg-white/10 font-semibold"
-                          : "text-white/70 hover:text-white hover:bg-white/5"
+                      className={`px-4 py-3 text-sm font-body font-medium rounded-xl transition-all duration-200 text-left w-full ${link.page === "about" ? "md:hidden block" : "block"} ${activePage === link.page
+                        ? "text-white bg-white/10 font-semibold"
+                        : "text-white/70 hover:text-white hover:bg-white/5"
                         }`}
                     >
                       {link.label}
                     </button>
                   ))}
                   <div className="h-[1px] bg-white/5 my-1" />
-                  <button
+                  <motion.button
                     onClick={() => handleNav("consultation")}
-                    className="px-4 py-3 text-sm font-bold text-dark bg-white hover:bg-offwhite rounded-xl text-center font-headline transition-all duration-300 w-full"
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="px-4 py-3 text-sm font-bold text-dark bg-white hover:bg-offwhite rounded-xl text-center font-headline transition-all duration-300 w-full shadow-md cursor-pointer"
                   >
                     {t("getInTouch")}
-                  </button>
+                  </motion.button>
                 </div>
               </motion.div>
             )}

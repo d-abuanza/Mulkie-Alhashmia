@@ -32,7 +32,8 @@
     "trustedBy": "Trusted by over",
     "clients": "50+ clients",
     "across": "across commercial and residential projects.",
-    "cta": "Get in Touch"
+    "cta": "Get in Touch",
+    "aboutButton": "Who is Dr. Mulkie?"
   },
   "Services": {
     "title": "What does the consultation offer?",
@@ -121,13 +122,22 @@
     }
   },
   "Footer": {
+    "brandName": "Dr. Mulkie Al-Hashmi",
+    "brandDesc": "Helping entrepreneurs and organizations build their identity and achieve their true impact through practical strategies in entrepreneurship and spatial identity.",
+    "quickLinks": "Quick Links",
     "links": {
-      "branding": "Strategic Branding",
-      "entrepreneurship": "Entrepreneurship",
-      "privacy": "Privacy",
-      "contact": "Contact"
+      "home": "Home",
+      "about": "Who is Dr. Mulkie?",
+      "services": "Services",
+      "consultation": "Consultation"
     },
-    "copyright": "© {year} Dr. Mulkie Al-Hashmi. All rights reserved."
+    "newsletter": {
+      "title": "Newsletter",
+      "desc": "Subscribe to receive the latest articles and tips directly in your inbox.",
+      "placeholder": "Your Email",
+      "subscribe": "Subscribe"
+    },
+    "copyright": "© {year} All rights reserved | Dr. Mulkie Al-Hashmi"
   },
   "Form": {
     "pageTitle": "Consultation Booking Form",
