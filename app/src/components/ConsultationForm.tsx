@@ -46,12 +46,12 @@ export default function ConsultationForm() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     let { name, value } = e.target;
-    
+
     // Numbers only for WhatsApp
     if (name === "whatsapp") {
       value = value.replace(/[^0-9]/g, "");
     }
-    
+
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -209,9 +209,8 @@ export default function ConsultationForm() {
             {stepTitles.map((title, i) => (
               <div key={i} className="flex-1 flex flex-col items-center gap-2">
                 <div
-                  className={`h-1.5 w-full rounded-full transition-all duration-500 ${
-                    i + 1 <= step ? "bg-[#F7F7F7]" : "bg-white/10"
-                  }`}
+                  className={`h-1.5 w-full rounded-full transition-all duration-500 ${i + 1 <= step ? "bg-[#F7F7F7]" : "bg-white/10"
+                    }`}
                 />
               </div>
             ))}
@@ -269,11 +268,10 @@ export default function ConsultationForm() {
                       onChange={handleInputChange}
                       onBlur={() => handleBlur("fullName")}
                       placeholder={t("q1.placeholder")}
-                      className={`${inputClass} ${
-                        touchedFields.includes("fullName") && formData.fullName.trim() === ""
+                      className={`${inputClass} ${touchedFields.includes("fullName") && formData.fullName.trim() === ""
                           ? "border-red-400/50 bg-red-400/5"
                           : ""
-                      }`}
+                        }`}
                       required
                     />
                   </div>
@@ -303,12 +301,12 @@ export default function ConsultationForm() {
                       onChange={handleInputChange}
                       onBlur={() => handleBlur("whatsapp")}
                       placeholder={t("q2.placeholder")}
-                      className={`${inputClass} ${
-                        touchedFields.includes("whatsapp") &&
-                        (formData.whatsapp === "" || !phoneRegex.test(formData.whatsapp))
+                      className={`${inputClass} ${touchedFields.includes("whatsapp") &&
+                          (formData.whatsapp === "" || !phoneRegex.test(formData.whatsapp))
                           ? "border-red-400/50 bg-red-400/5"
                           : ""
-                      }`}
+                        }`}
+                      dir="ltr"
                       required
                     />
                   </div>
@@ -338,12 +336,12 @@ export default function ConsultationForm() {
                       onChange={handleInputChange}
                       onBlur={() => handleBlur("email")}
                       placeholder={t("q3.placeholder")}
-                      className={`${inputClass} ${
-                        touchedFields.includes("email") &&
-                        (formData.email === "" || !emailRegex.test(formData.email))
+                      className={`${inputClass} ${touchedFields.includes("email") &&
+                          (formData.email === "" || !emailRegex.test(formData.email))
                           ? "border-red-400/50 bg-red-400/5"
                           : ""
-                      }`}
+                        }`}
+                      dir="ltr"
                       required
                     />
                   </div>
@@ -394,11 +392,10 @@ export default function ConsultationForm() {
                       onChange={handleInputChange}
                       onBlur={() => handleBlur("projectInfo")}
                       placeholder={t("q5.placeholder")}
-                      className={`${textareaClass} ${
-                        touchedFields.includes("projectInfo") && formData.projectInfo.trim() === ""
+                      className={`${textareaClass} ${touchedFields.includes("projectInfo") && formData.projectInfo.trim() === ""
                           ? "border-red-400/50 bg-red-400/5"
                           : ""
-                      }`}
+                        }`}
                       required
                     />
                   </div>
@@ -418,11 +415,10 @@ export default function ConsultationForm() {
                       value={formData.projectStage}
                       onChange={handleInputChange}
                       onBlur={() => handleBlur("projectStage")}
-                      className={`${inputClass} ${
-                        touchedFields.includes("projectStage") && formData.projectStage === ""
+                      className={`${inputClass} ${touchedFields.includes("projectStage") && formData.projectStage === ""
                           ? "border-red-400/50 bg-red-400/5"
                           : ""
-                      }`}
+                        }`}
                       required
                     >
                       <option value="" disabled className="bg-[#0c1a2e] text-white">
@@ -468,11 +464,10 @@ export default function ConsultationForm() {
                       onChange={handleInputChange}
                       onBlur={() => handleBlur("idealCustomer")}
                       placeholder={t("q7.placeholder")}
-                      className={`${textareaClass} ${
-                        touchedFields.includes("idealCustomer") && formData.idealCustomer.trim() === ""
+                      className={`${textareaClass} ${touchedFields.includes("idealCustomer") && formData.idealCustomer.trim() === ""
                           ? "border-red-400/50 bg-red-400/5"
                           : ""
-                      }`}
+                        }`}
                       required
                     />
                   </div>
@@ -513,13 +508,12 @@ export default function ConsultationForm() {
                                 setTouchedFields(prev => [...prev, "marketingChannels"]);
                               }
                             }}
-                            className={`px-4 py-3 rounded-xl border text-sm font-body text-left transition-all duration-200 ${
-                              selectedChannels.includes(ch)
+                            className={`px-4 py-3 rounded-xl border text-sm font-body text-left transition-all duration-200 ${selectedChannels.includes(ch)
                                 ? "bg-white/15 border-white text-white font-medium"
                                 : touchedFields.includes("marketingChannels") && selectedChannels.length === 0
-                                ? "bg-red-400/5 border-red-400/20 text-white/60 hover:border-red-400/40"
-                                : "bg-white/5 border-white/10 text-white/60 hover:border-white/25"
-                            }`}
+                                  ? "bg-red-400/5 border-red-400/20 text-white/60 hover:border-red-400/40"
+                                  : "bg-white/5 border-white/10 text-white/60 hover:border-white/25"
+                              }`}
                           >
                             {t(`q8.options.${ch}`)}
                           </button>
@@ -574,11 +568,10 @@ export default function ConsultationForm() {
                       onChange={handleInputChange}
                       onBlur={() => handleBlur("biggestChallenge")}
                       placeholder={t("q10.placeholder")}
-                      className={`${textareaClass} ${
-                        touchedFields.includes("biggestChallenge") && formData.biggestChallenge.trim() === ""
+                      className={`${textareaClass} ${touchedFields.includes("biggestChallenge") && formData.biggestChallenge.trim() === ""
                           ? "border-red-400/50 bg-red-400/5"
                           : ""
-                      }`}
+                        }`}
                       required
                     />
                   </div>
@@ -600,11 +593,10 @@ export default function ConsultationForm() {
                       onChange={handleInputChange}
                       onBlur={() => handleBlur("consultationGoal")}
                       placeholder={t("q11.placeholder")}
-                      className={`${textareaClass} ${
-                        touchedFields.includes("consultationGoal") && formData.consultationGoal.trim() === ""
+                      className={`${textareaClass} ${touchedFields.includes("consultationGoal") && formData.consultationGoal.trim() === ""
                           ? "border-red-400/50 bg-red-400/5"
                           : ""
-                      }`}
+                        }`}
                       required
                     />
                   </div>
