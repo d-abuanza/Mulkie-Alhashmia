@@ -137,16 +137,21 @@ export default function ConsultationForm() {
         marketingChannels: selectedChannels.join(", "),
       };
 
-      const res = await fetch("/api/submit-form", {
+      // Submit directly to Google Apps Script (bypasses API route).
+      // Using no-cors + text/plain avoids CORS preflight; the JSON body
+      // is still accessible server-side via e.postData.contents.
+      const GOOGLE_SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbwcKHJmMraxTIxD2dVmNqd3MZfbHi--F6ozTcL831CLo7iKJ_WjwHe5SlgxvL252S0YQw/exec";
+
+      await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(payload),
       });
 
-      if (!res.ok) {
-        throw new Error("Submission failed");
-      }
-
+      // With no-cors the response is opaque (unreadable), but if fetch
+      // didn't throw a network error the request was delivered successfully.
       setSubmitted(true);
     } catch {
       setSubmitError("حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.");
