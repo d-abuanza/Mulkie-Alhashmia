@@ -1,5 +1,22 @@
 import type { Variants } from "framer-motion";
 
+// ─── Staggered Reveal (y:50 → y:0 with opacity fade) ───
+export const staggerReveal: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: (delay: number = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.9,
+      ease: [0.16, 1, 0.3, 1],
+      delay,
+    },
+  }),
+};
+
 // Fade up animation for text and generic elements
 export const fadeUp: Variants = {
   hidden: {
@@ -77,6 +94,17 @@ export const staggerContainer: Variants = {
   },
 };
 
+// Stagger container — Hero variant with wider delay
+export const heroStaggerContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.18,
+      delayChildren: 0.2,
+    },
+  },
+};
+
 // Card hover animation
 export const cardHover: Variants = {
   rest: {
@@ -129,6 +157,39 @@ export const scaleIn: Variants = {
     opacity: 0,
     scale: 0.8,
   },
+  visible: (delay: number = 0) => ({
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1],
+      delay,
+    },
+  }),
+};
+
+// Glass card reveal (for glassmorphism cards)
+export const glassReveal: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+    scale: 0.97,
+  },
+  visible: (delay: number = 0) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1],
+      delay,
+    },
+  }),
+};
+
+// City node ping animation
+export const cityPing: Variants = {
+  hidden: { opacity: 0, scale: 0.5 },
   visible: (delay: number = 0) => ({
     opacity: 1,
     scale: 1,

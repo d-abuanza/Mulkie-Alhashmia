@@ -1,13 +1,23 @@
 {
   "Navigation": {
-    "about": "About Dr. Mulkie",
+    "about": "About Dr. Mulkie Al-Hashmi",
     "services": "Services",
     "methodology": "Methodology",
     "consultation": "Consultation",
     "getInTouch": "Get in Touch"
   },
   "About": {
-    "title": "Who is Dr. Mulkie?",
+    "title": "Who is Dr. Mulkie Al-Hashmi?",
+    "headline1": "I help entrepreneurs and organizations build their",
+    "headlineHighlight": "identity",
+    "headline2": "and achieve their true impact.",
+    "desc1": "A PhD in ",
+    "desc1Bold": "Community Entrepreneurship and Spatial Identity",
+    "desc1End": ", combining academic depth with field expertise to help entrepreneurs and organizations build their identity and achieve their true impact.",
+    "desc2": "Working with clients from ",
+    "desc2Bold": "Muscat, Riyadh, Dubai, and Berlin",
+    "desc2End": " to transform their ideas into projects with a clear identity and future vision.",
+    "cities": "Muscat \u00b7 Riyadh \u00b7 Dubai \u00b7 Berlin",
     "paragraph": "A PhD in Community Entrepreneurship and Spatial Identity, combining academic depth with field expertise to help entrepreneurs and organizations build their identity and achieve their true impact. Working with clients from Muscat, Riyadh, Dubai, and Berlin.",
     "specializationTitle": "Specialization",
     "specializations": {
@@ -19,7 +29,9 @@
   },
   "Hero": {
     "badge": "Spatial Identity Consultant · 2025",
-    "greeting": "Hi I'm Dr. Mulkie",
+    "tag": "Consultant & Founder",
+    "specialtyBox": "PhD · Community Entrepreneurship",
+    "greeting": "Hi, I'm Dr. Mulkie Al-Hashmi",
     "role1": "Spatial Identity",
     "role2": "Consultant",
     "availability": "Available for new opportunities",
@@ -33,10 +45,12 @@
     "clients": "50+ clients",
     "across": "across commercial and residential projects.",
     "cta": "Get in Touch",
-    "aboutButton": "Who is Dr. Mulkie?"
+    "aboutButton": "Who is Dr. Mulkie Al-Hashmi?"
   },
   "Services": {
     "title": "What does the consultation offer?",
+    "headline": "Services designed to build",
+    "headlineHighlight": "real impact",
     "cards": {
       "growth": {
         "title": "Growth Strategy",
@@ -53,7 +67,10 @@
     }
   },
   "Process": {
-    "title": "How does the consultation session work?",
+    "title": "How does the consultation session go?",
+    "headline1": "Clear",
+    "headlineHighlight": "methodology",
+    "headline2": "from the beginning",
     "steps": {
       "register": {
         "number": "01",
@@ -78,6 +95,7 @@
     }
   },
   "CTA": {
+    "label": "Start Now",
     "title": "Are you ready to take your project to the next level?",
     "description": "Book your consultation with Dr. Mulkie now — answer a few short questions and we'll reach out to confirm your appointment.",
     "ctaButton": "Click here to register and book your appointment",
@@ -127,8 +145,9 @@
     "quickLinks": "Quick Links",
     "links": {
       "home": "Home",
-      "about": "Who is Dr. Mulkie?",
+      "about": "Who is Dr. Mulkie Al-Hashmi?",
       "services": "Services",
+      "methodology": "Methodology",
       "consultation": "Consultation"
     },
     "newsletter": {

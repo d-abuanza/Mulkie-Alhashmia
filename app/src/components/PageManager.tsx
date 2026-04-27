@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, createContext, useContext } from "react";
+import { useState, useCallback, createContext, useContext, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Hero from "./Hero";
 import About from "./About";
@@ -21,7 +21,7 @@ interface PageContextType {
 
 export const PageContext = createContext<PageContextType>({
   activePage: "hero",
-  navigateTo: () => {},
+  navigateTo: () => { },
 });
 
 export const usePageNavigation = () => useContext(PageContext);
@@ -36,7 +36,7 @@ function getPageIndex(page: PageId): number {
   return PAGE_ORDER.indexOf(page);
 }
 
-// The component for each page (each takes full viewport)
+// The component for each page
 function PageContent({ pageId }: { pageId: PageId }) {
   switch (pageId) {
     case "hero":
@@ -44,30 +44,13 @@ function PageContent({ pageId }: { pageId: PageId }) {
     case "about":
       return <About />;
     case "services":
-      return (
-        <div className="min-h-screen flex flex-col">
-          <div className="flex-grow">
-            <Services />
-          </div>
-          <Footer />
-        </div>
-      );
+      return <Services />;
     case "methodology":
-      return (
-        <div className="min-h-screen flex flex-col">
-          <div className="flex-grow">
-            <Process />
-          </div>
-          <Footer />
-        </div>
-      );
+      return <Process />;
     case "consultation":
       return (
-        <div className="min-h-screen flex flex-col">
-          <div className="flex-grow flex items-center justify-center">
-            <CTA />
-          </div>
-          <Footer />
+        <div className="flex items-center justify-center py-20 lg:py-32">
+          <CTA />
         </div>
       );
     case "form":
@@ -77,62 +60,97 @@ function PageContent({ pageId }: { pageId: PageId }) {
   }
 }
 
-// Slide transition variants
-const slideVariants = {
-  enter: (direction: number) => ({
-    x: direction > 0 ? "100%" : "-100%",
-    opacity: 0,
-  }),
-  center: {
-    x: 0,
-    opacity: 1,
-  },
-  exit: (direction: number) => ({
-    x: direction > 0 ? "-100%" : "100%",
-    opacity: 0,
-  }),
-};
-
 export default function PageManager({ children }: { children?: React.ReactNode }) {
   const [activePage, setActivePage] = useState<PageId>("hero");
-  const [direction, setDirection] = useState(0);
+
+  // Update active page based on scroll position
+  useEffect(() => {
+    const sections = PAGE_ORDER.filter(id => id !== "form");
+    const observers: IntersectionObserver[] = [];
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -70% 0px", // Trigger when section is in the upper part of viewport
+      threshold: 0
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActivePage(entry.target.id as PageId);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sections.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const navigateTo = useCallback(
     (page: PageId) => {
-      if (page === activePage) return;
-      const currentIndex = getPageIndex(activePage);
-      const nextIndex = getPageIndex(page);
-      setDirection(nextIndex > currentIndex ? 1 : -1);
+      if (page === "form") {
+        setActivePage("form");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+
       setActivePage(page);
+      const element = document.getElementById(page);
+      if (element) {
+        const offset = 80; // Account for fixed header
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
     },
-    [activePage]
+    []
   );
 
-  const isStandalone = STANDALONE_PAGES.includes(activePage);
+  const isStandalone = activePage === "form";
+
+  if (isStandalone) {
+    return (
+      <PageContext.Provider value={{ activePage, navigateTo }}>
+        <ConsultationForm />
+      </PageContext.Provider>
+    );
+  }
 
   return (
     <PageContext.Provider value={{ activePage, navigateTo }}>
-      {/* Hide navigation on standalone pages (e.g. form) */}
-      {!isStandalone && children}
-      <div className="relative w-full min-h-screen overflow-hidden">
-        <AnimatePresence mode="wait" custom={direction}>
-          <motion.div
-            key={activePage}
-            custom={direction}
-            variants={slideVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{
-              x: { type: "tween", duration: 0.5, ease: [0.32, 0.72, 0, 1] },
-              opacity: { duration: 0.3 },
-            }}
-            className="w-full min-h-screen"
-          >
-            <PageContent pageId={activePage} />
-          </motion.div>
-        </AnimatePresence>
-      </div>
+      {children}
+      <main className="relative w-full overflow-x-hidden">
+        <section id="hero">
+          <Hero />
+        </section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="services">
+          <Services />
+        </section>
+        <section id="methodology">
+          <Process />
+        </section>
+        <section id="consultation">
+          <div className="flex items-center justify-center py-20 lg:py-32 bg-[#0c1a2e]">
+            <CTA />
+          </div>
+        </section>
+        <Footer />
+      </main>
     </PageContext.Provider>
   );
 }

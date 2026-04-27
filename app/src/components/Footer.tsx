@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
+
 import { fadeUp } from "@/lib/animations";
 import { useTranslations } from "next-intl";
 import { usePageNavigation, type PageId } from "./PageManager";
@@ -31,8 +33,16 @@ export default function Footer() {
               {t("links.home")}
             </button>
             <span className="text-white/15 text-[10px]">|</span>
+            <button onClick={(e) => handleNav(e, "about")} className="text-white/60 hover:text-white transition-colors text-[11px] md:text-xs font-medium">
+              {t("links.about")}
+            </button>
+            <span className="text-white/15 text-[10px]">|</span>
             <button onClick={(e) => handleNav(e, "services")} className="text-white/60 hover:text-white transition-colors text-[11px] md:text-xs font-medium">
               {t("links.services")}
+            </button>
+            <span className="text-white/15 text-[10px]">|</span>
+            <button onClick={(e) => handleNav(e, "methodology")} className="text-white/60 hover:text-white transition-colors text-[11px] md:text-xs font-medium">
+              {t("links.methodology")}
             </button>
             <span className="text-white/15 text-[10px]">|</span>
             <button onClick={(e) => handleNav(e, "consultation")} className="text-white/60 hover:text-white transition-colors text-[11px] md:text-xs font-medium">
@@ -47,9 +57,14 @@ export default function Footer() {
 
           {/* Brand + Socials */}
           <div className="flex items-center gap-3 order-1 md:order-3">
-            <span className="text-xs md:text-sm font-headline font-bold text-white/80">
-              {t("brandName")}
-            </span>
+            <div className="relative h-6 md:h-8 w-24 md:w-32 opacity-80">
+              <Image
+                src="/توقيع مُلكي أبيض.png"
+                alt="Dr. Mulkie Al-Hashmi"
+                fill
+                className="object-contain"
+              />
+            </div>
             <div className="flex items-center gap-1.5">
               <a
                 href="https://www.linkedin.com/in/dr-mulkie-al-hashmi"

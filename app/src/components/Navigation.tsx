@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -34,13 +36,46 @@ export default function Navigation() {
         {/* Logo — clicking it goes back to Hero */}
         <button
           onClick={() => handleNav("hero")}
-          className="text-lg font-serif italic text-white tracking-tight hover:opacity-70 transition-opacity"
+          className="relative h-8 md:h-10 w-32 md:w-40 hover:opacity-70 transition-opacity"
         >
-          Dr. Mulkie Al-Hashmi
+          <Image
+            src="/توقيع مُلكي أبيض.png"
+            alt="Dr. Mulkie Al-Hashmi"
+            fill
+            className="object-contain"
+            priority
+          />
         </button>
 
-        {/* Menu Toggle & Language Switcher */}
-        <div className="relative flex items-center gap-3">
+        {/* ===== DESKTOP NAV LINKS (hidden on mobile) ===== */}
+        <div className="hidden md:flex items-center gap-1 lg:gap-2">
+          {navLinks.map((link) => (
+            <button
+              key={link.page}
+              onClick={() => handleNav(link.page)}
+              className={`px-4 py-2 text-sm font-body font-medium rounded-full transition-all duration-200 ${activePage === link.page
+                ? "text-white bg-white/10 font-semibold"
+                : "text-white/60 hover:text-white hover:bg-white/5"
+                }`}
+            >
+              {link.label}
+            </button>
+          ))}
+          <motion.button
+            onClick={() => handleNav("consultation")}
+            whileHover={{ scale: 1.03, y: -1 }}
+            whileTap={{ scale: 0.97 }}
+            className="ms-2 px-5 py-2 text-sm font-bold text-[#0c1a2e] bg-[#8fd108] hover:bg-[#a0e010] rounded-full font-headline transition-all duration-300 shadow-[0_0_12px_rgba(143,209,8,0.2)] hover:shadow-[0_4px_20px_rgba(143,209,8,0.35)] cursor-pointer"
+          >
+            {t("getInTouch")}
+          </motion.button>
+          {/* <div className="ms-2">
+            <LanguageSwitcher />
+          </div> */}
+        </div>
+
+        {/* ===== MOBILE: Hamburger + Language Switcher (hidden on desktop) ===== */}
+        <div className="relative flex md:hidden items-center gap-3">
           <LanguageSwitcher />
 
           <button
@@ -56,7 +91,7 @@ export default function Navigation() {
             </span>
           </button>
 
-          {/* Floating Dropdown Menu */}
+          {/* Floating Dropdown Menu — mobile only */}
           <AnimatePresence>
             {mobileOpen && (
               <motion.div
@@ -71,7 +106,7 @@ export default function Navigation() {
                     <button
                       key={link.page}
                       onClick={() => handleNav(link.page)}
-                      className={`px-4 py-3 text-sm font-body font-medium rounded-xl transition-all duration-200 text-left w-full ${link.page === "about" ? "md:hidden block" : "block"} ${activePage === link.page
+                      className={`px-4 py-3 text-sm font-body font-medium rounded-xl transition-all duration-200 text-left w-full block ${activePage === link.page
                         ? "text-white bg-white/10 font-semibold"
                         : "text-white/70 hover:text-white hover:bg-white/5"
                         }`}
@@ -84,7 +119,7 @@ export default function Navigation() {
                     onClick={() => handleNav("consultation")}
                     whileHover={{ scale: 1.02, y: -2 }}
                     whileTap={{ scale: 0.98 }}
-                    className="px-4 py-3 text-sm font-bold text-dark bg-white hover:bg-offwhite rounded-xl text-center font-headline transition-all duration-300 w-full shadow-md cursor-pointer"
+                    className="px-4 py-3 text-sm font-bold text-[#0c1a2e] bg-[#8fd108] hover:bg-[#a0e010] rounded-xl text-center font-headline transition-all duration-300 w-full shadow-md cursor-pointer"
                   >
                     {t("getInTouch")}
                   </motion.button>
