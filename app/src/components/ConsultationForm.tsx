@@ -19,6 +19,8 @@ export default function ConsultationForm() {
   const [step, setStep] = useState(1);
   const [direction, setDirection] = useState(1);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   // Form state
   const [formData, setFormData] = useState({
@@ -125,8 +127,32 @@ export default function ConsultationForm() {
     }
   };
 
-  const handleSubmit = () => {
-    setSubmitted(true);
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      const payload = {
+        ...formData,
+        marketingChannels: selectedChannels.join(", "),
+      };
+
+      const res = await fetch("/api/submit-form", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        throw new Error("Submission failed");
+      }
+
+      setSubmitted(true);
+    } catch {
+      setSubmitError("حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const toggleChannel = (ch: string) => {
@@ -167,10 +193,10 @@ export default function ConsultationForm() {
           <button
             type="button"
             onClick={() => navigateTo("hero")}
-            className="inline-flex items-center gap-2 bg-white text-dark font-headline font-bold px-8 py-3.5 rounded-full hover:bg-offwhite transition-all duration-300 cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 bg-white text-[#0c1a2e] font-headline font-bold px-8 py-3.5 rounded-full hover:bg-offwhite transition-all duration-300 cursor-pointer"
           >
-            <span className="material-symbols-outlined text-xl rtl:rotate-180">home</span>
-            {t("backToHome")}
+            <span className="material-symbols-outlined text-[20px] leading-none">home</span>
+            <span className="leading-none mt-0.5">{t("backToHome")}</span>
           </button>
         </motion.div>
       </div>
@@ -620,30 +646,50 @@ export default function ConsultationForm() {
             </AnimatePresence>
 
             {/* ─── Navigation Buttons ─── */}
-            <div className="pt-10 mt-10 flex justify-between items-center border-t border-dark/5">
-              {step > 1 ? (
+            <div className="pt-10 mt-10 flex flex-col gap-4 border-t border-dark/5">
+              <div className="flex justify-between items-center">
+                {step > 1 ? (
+                  <button
+                    type="button"
+                    onClick={goPrev}
+                    disabled={isSubmitting}
+                    className="flex items-center gap-2 text-white/40 hover:text-white transition-colors font-headline cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+                  >
+                    <span className="material-symbols-outlined rtl:rotate-180">arrow_back</span>
+                    {t("buttons.prev")}
+                  </button>
+                ) : (
+                  <div />
+                )}
+
                 <button
                   type="button"
-                  onClick={goPrev}
-                  className="flex items-center gap-2 text-white/40 hover:text-white transition-colors font-headline cursor-pointer"
+                  onClick={validateAndProceed}
+                  disabled={isSubmitting}
+                  className="group flex items-center gap-3 bg-white text-dark font-headline font-bold px-8 py-3.5 rounded-full hover:bg-offwhite transition-all duration-300 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  <span className="material-symbols-outlined rtl:rotate-180">arrow_back</span>
-                  {t("buttons.prev")}
+                  {isSubmitting ? (
+                    <>
+                      <span className="animate-spin material-symbols-outlined text-xl">progress_activity</span>
+                      جارٍ الإرسال...
+                    </>
+                  ) : (
+                    <>
+                      {step === TOTAL_STEPS ? t("buttons.submit") : t("buttons.next")}
+                      <span className="material-symbols-outlined text-xl rtl:rotate-180 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">
+                        {step === TOTAL_STEPS ? "send" : "arrow_forward"}
+                      </span>
+                    </>
+                  )}
                 </button>
-              ) : (
-                <div />
-              )}
+              </div>
 
-              <button
-                type="button"
-                onClick={validateAndProceed}
-                className="group flex items-center gap-3 bg-white text-dark font-headline font-bold px-8 py-3.5 rounded-full hover:bg-offwhite transition-all duration-300 cursor-pointer"
-              >
-                {step === TOTAL_STEPS ? t("buttons.submit") : t("buttons.next")}
-                <span className="material-symbols-outlined text-xl rtl:rotate-180 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">
-                  {step === TOTAL_STEPS ? "send" : "arrow_forward"}
-                </span>
-              </button>
+              {/* Error message */}
+              {submitError && (
+                <p className="text-red-400 text-sm font-body text-center animate-in fade-in duration-300">
+                  {submitError}
+                </p>
+              )}
             </div>
           </form>
         </div>

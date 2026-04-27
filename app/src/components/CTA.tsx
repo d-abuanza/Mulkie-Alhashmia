@@ -91,18 +91,15 @@ export default function CTA() {
               {/* Inner content container */}
               <div className="relative z-10 flex flex-col items-center text-center">
 
-                {/* Label pill */}
+                {/* Label icon + text */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#8fd108]/20 bg-[#8fd108]/[0.06] mb-10"
+                  className="flex items-center gap-2 mb-10"
                 >
-                  <span className="relative flex h-1.5 w-1.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#8fd108] opacity-75" />
-                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#8fd108]" />
-                  </span>
+                  <Image src="/2.svg" alt="" width={16} height={16} className="shrink-0" />
                   <span className="text-xs font-headline font-semibold text-[#8fd108]/80 tracking-wider uppercase">
                     {t("label")}
                   </span>

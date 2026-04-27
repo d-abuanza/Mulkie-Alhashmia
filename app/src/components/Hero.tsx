@@ -167,12 +167,9 @@ export default function Hero() {
           <motion.div
             variants={staggerReveal}
             custom={0}
-            className="flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-md mb-8"
+            className="flex items-center gap-2.5 mb-8"
           >
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#8fd108] opacity-75" />
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#8fd108]" />
-            </span>
+            <Image src="/2.svg" alt="" width={16} height={16} className="shrink-0" />
             <span className="text-xs font-body text-white/60 tracking-wide">
               {t("tag")}
             </span>
@@ -254,7 +251,7 @@ export default function Hero() {
             <motion.div
               variants={staggerReveal}
               custom={0}
-              className="flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-md"
+              className="flex items-center gap-3"
             >
               <Image src="/2.svg" alt="" width={18} height={18} className="shrink-0" />
               <span className="text-sm font-body text-white/50 tracking-wide">
@@ -312,12 +309,9 @@ export default function Hero() {
             <motion.div
               variants={staggerReveal}
               custom={0.72}
-              className="flex items-center gap-4 px-5 py-3 rounded-xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm mt-4"
+              className="flex items-center gap-4 mt-4"
             >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#8fd108] opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#8fd108]" />
-              </span>
+              <Image src="/2.svg" alt="" width={14} height={14} className="shrink-0" />
               <span className="text-sm font-body text-white/40">
                 {t("trustedBy")} <span className="text-white/70 font-semibold">{t("clients")}</span>
               </span>
@@ -357,8 +351,9 @@ export default function Hero() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute bottom-8 -start-6 lg:-start-10 px-4 py-2.5 rounded-lg border border-white/10 bg-[#0c1a2e]/80 backdrop-blur-xl"
+              className="absolute bottom-8 -start-6 lg:-start-10 flex items-center gap-2"
             >
+              <Image src="/2.svg" alt="" width={12} height={12} className="shrink-0" />
               <span className="text-xs font-body text-white/70">{t("specialtyBox")}</span>
             </motion.div>
           </motion.div>
