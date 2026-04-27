@@ -144,10 +144,8 @@ export default function PageManager({ children }: { children?: React.ReactNode }
         <section id="methodology">
           <Process />
         </section>
-        <section id="consultation">
-          <div className="flex items-center justify-center py-20 lg:py-32 bg-[#0c1a2e]">
-            <CTA />
-          </div>
+        <section id="consultation" className="bg-[#0c1a2e]">
+          <CTA />
         </section>
         <Footer />
       </main>

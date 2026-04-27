@@ -61,7 +61,7 @@ export default function Process() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-20 md:py-28 px-4 md:px-6 lg:px-8 overflow-hidden"
+      className="relative pt-20 pb-8 md:pt-28 md:pb-12 px-4 md:px-6 lg:px-8 overflow-hidden"
     >
       {/* Background glow keyed to active step */}
       <AnimatePresence mode="wait">
