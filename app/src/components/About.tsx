@@ -77,13 +77,6 @@ function TiltCard({
   );
 }
 
-/* ─── Cities ─── */
-const CITIES = [
-  { ar: "مسقط", en: "Muscat" },
-  { ar: "الرياض", en: "Riyadh" },
-  { ar: "دبي", en: "Dubai" },
-  { ar: "برلين", en: "Berlin" },
-];
 
 /* ─── Specializations ─── */
 const SPECS = [
@@ -285,40 +278,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* ═══ Cities Marquee ═══ */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="relative overflow-hidden py-6 border-t border-b border-white/[0.05]"
-        >
-          {/* Fade edges */}
-          <div className="absolute inset-y-0 start-0 w-20 bg-gradient-to-e from-[#0c1a2e] to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 end-0 w-20 bg-gradient-to-s from-[#0c1a2e] to-transparent z-10 pointer-events-none" />
-
-          <motion.div
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="flex items-center gap-12 whitespace-nowrap w-max"
-          >
-            {/* Duplicate cities for seamless loop */}
-            {[...CITIES, ...CITIES, ...CITIES, ...CITIES].map((city, i) => (
-              <span
-                key={`${city.en}-${i}`}
-                className="flex items-center gap-3 text-white/20"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
-                <span className="text-sm md:text-base font-headline font-medium tracking-wider">
-                  {city.ar}
-                </span>
-                <span className="text-[10px] font-body text-white/10 uppercase tracking-widest">
-                  {city.en}
-                </span>
-              </span>
-            ))}
-          </motion.div>
-        </motion.div>
 
       </div>
     </section>
